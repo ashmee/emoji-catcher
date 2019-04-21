@@ -1,0 +1,340 @@
+body {
+    background-image: url(images/mainGrassBackground.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #79be4d;
+    font-family: Montserrat,sans-serif;
+    margin: 21px 0 0 0
+}
+
+button {
+    font-family: Montserrat,monospace;
+    color: #27a8f3;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.main-wrapper {
+    padding-left: 0
+}
+
+.header {
+    margin: 0 auto 152px auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+    max-width: 1360px;
+    height: 100px;
+    position: relative
+}
+
+.character-bar__speed {
+    width: 136px;
+    height: 136px;
+    background: #fff;
+    box-shadow: 1px 4px 4px rgba(0,0,0,.09);
+    border-radius: 50%;
+    position: absolute;
+    top: 23px;
+    left: 10px;
+    z-index: 3
+}
+
+.speed__star {
+    position: absolute;
+    top: 33px;
+    left: 32px;
+    z-index: 4;
+    font-size: 24px
+}
+
+.animate {
+    animation: speedup 1s 1 ease-out
+}
+
+@keyframes speedup {
+    0% {
+        -webkit-transform: translateX(0) translateY(0) rotate(0deg)
+    }
+
+    20% {
+        -webkit-transform: translateX(0) translateY(-50px) rotate(0deg)
+    }
+
+    20.01% {
+        -webkit-transform: translateX(0) translateY(-50px) rotate(20000deg)
+    }
+
+    75% {
+        -webkit-transform: translateX(0) translateY(-50px) rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: translateX(0) translateY(0) rotate(0deg)
+    }
+}
+
+.character-bar__scores {
+    width: 183px;
+    height: 45px;
+    background: #a0b4be;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.25);
+    border-radius: 62px;
+    border: 11px #fff solid;
+    position: absolute;
+    top: 38px;
+    left: 70px;
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0 0 31px;
+    z-index: 2
+}
+
+.character-bar__lives {
+    width: 193px;
+    height: 46px;
+    background: #fff;
+    box-shadow: inset 1px 1px 4px rgba(0,0,0,.25);
+    border-radius: 62px;
+    position: absolute;
+    top: 104px;
+    left: 60px;
+    z-index: 1
+}
+
+.lives__lives-box {
+    position: absolute;
+    top: 15px;
+    left: 95px
+}
+
+.lives-box__heart {
+    padding-right: 2px
+}
+
+.buttons-area {
+    margin: 5px;
+    padding: 5px;
+    flex: 0 1 50%;
+    align-self: center;
+    display: flex;
+    justify-content: flex-end
+}
+
+.button-start {
+    font-size: 20px;
+    width: 233px;
+    height: 71px;
+    background: #fff;
+    border: 8px solid #fff;
+    border-radius: 62px;
+    outline: 0;
+    margin-right: 17px;
+    transition: .3s;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25)
+}
+
+.button-help {
+    font-size: 30px;
+    width: 71px;
+    height: 71px;
+    background: #fff;
+    border: 8px solid #fff;
+    border-radius: 62px;
+    outline: 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+    transition: .25s linear,opacity .25s ease-in-out
+}
+
+.button-start:hover,.button-help:hover {
+    color: #fff;
+    background: #27a8f3;
+    cursor: pointer
+}
+
+.game-area {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 470px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.game-area__wrapper {
+    width: 30%;
+    height: 245px;
+    position: relative
+}
+
+.game-area__hole {
+    width: 225px;
+    height: 167px;
+    border-radius: 140px/100px;
+    background: #ae8348;
+    box-shadow: inset 0 9px 10px rgba(0,0,0,.2);
+    position: absolute;
+    cursor: pointer;
+    font-size: 150px;
+    text-align: center;
+    line-height: 120px;
+    user-select: none
+}
+
+.hole-1 {
+    top: 25px;
+    left: 9px
+}
+
+.hole-2 {
+    left: 44px;
+    bottom: 3px
+}
+
+.hole-3 {
+    top: 0;
+    right: 0
+}
+
+.hole-4 {
+    left: 16px;
+    bottom: 39px
+}
+
+.hole-5 {
+    left: 41px;
+    bottom: 34px
+}
+
+@keyframes showEmo {
+    0% {
+        transform: translateY(150px)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+.hole__animate {
+    animation: showEmo 1s 1 ease-out;
+    transition: top 1s ease-out .5s
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+    width: 821px;
+    height: 503px;
+    background: #27a8f3;
+    border: 23px solid #fff;
+    box-sizing: border-box;
+    border-radius: 65px;
+    color: #fff
+}
+
+.popup__header {
+    width: 517px;
+    height: 96px;
+    background: #fff;
+    border: 8px solid #fff;
+    box-sizing: border-box;
+    border-radius: 65px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 35px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 75px;
+    color: #27a8f3;
+    position: absolute;
+    bottom: 429px;
+    left: 130px
+}
+
+.popup__rules {
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 20px;
+    padding: 73px 63px 0 18px
+}
+
+.popup__button {
+    font-size: 35px;
+    width: 257px;
+    height: 77px;
+    color: #fff;
+    background: #ffe500;
+    border: 8px solid #fff;
+    border-radius: 62px;
+    outline: 0;
+    transition: .3s;
+    position: absolute;
+    top: 429px;
+    left: 259px
+}
+
+.popup__button:hover {
+    background: #ffc700;
+    transition: .3s ease-in-out;
+    cursor: pointer
+}
+
+.popup__list-item {
+    margin-bottom: 10px
+}
+
+.endgame__congrats {
+    font-size: 29px;
+    margin-bottom: 20px
+}
+
+.endgame__number {
+    font-size: 160px;
+    margin-bottom: -35px
+}
+
+.endgame__score {
+    font-size: 70px
+}
+
+.endgame {
+    display: none;
+    text-align: center;
+    padding-top: 50px;
+    z-index: 5
+}
+
+.guide {
+    display: none;
+    z-index: 5
+}
+
+@media screen and (max-width:960px) {
+    body {
+        margin: 0
+    }
+
+    .header {
+        margin: 0 auto 5em auto;
+        min-width: 800px
+    }
+
+    .game-area {
+        min-width: 800px
+    }
+}

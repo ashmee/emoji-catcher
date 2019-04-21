@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Catch the mice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,800" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <header class="header">
+        <div class="character-bar">
+            <div class="character-bar__scores">0</div>
+            <div class="character-bar__speed">
+                <svg xmlns="http://www.w3.org/2000/svg" class="speed__star" width="71" height="69" fill="none">
+                    <path fill="#FFE500"
+                          d="M38.928 2.166l8.008 16.49a3.827 3.827 0 0 0 2.879 2.124l17.907 2.644c3.137.464 4.388 4.38 2.12 6.627L56.883 42.886a3.925 3.925 0 0 0-1.1 3.439l3.06 18.123c.535 3.174-2.744 5.595-5.549 4.097L37.28 59.989a3.774 3.774 0 0 0-3.559 0l-16.015 8.556c-2.805 1.499-6.084-.923-5.548-4.097l3.058-18.123a3.925 3.925 0 0 0-1.099-3.44L1.16 30.052c-2.27-2.248-1.018-6.164 2.12-6.627l17.906-2.644a3.827 3.827 0 0 0 2.88-2.125l8.007-16.489c1.401-2.888 5.453-2.888 6.856 0z"></path>
+                    <text x="40%" y="50%" fill="#FFFFFF" stroke-width=".5px" dy=".5em" id="currentSpeed">0</text>
+                </svg>
+            </div>
+            <div class="character-bar__lives">
+                <div class="lives__lives-box">
+                    <svg width="22" height="20" fill="none" class="lives-box__heart">
+                        <path fill="#FF1A00" d="M11 20l-1.54-1.522c-5.72-5-9.46-8.37-9.46-12.5C0 2.608 2.64 0 6.05 0 7.92 0 9.79.87 11 2.283 12.21.87 14.08 0 15.95 0 19.36 0 22 2.609 22 5.978c0 4.13-3.74 7.5-9.46 12.5L11 20z"></path>
+                    </svg>
+                    <svg width="22" height="20" fill="none" class="lives-box__heart">
+                        <path fill="#FF1A00" d="M11 20l-1.54-1.522c-5.72-5-9.46-8.37-9.46-12.5C0 2.608 2.64 0 6.05 0 7.92 0 9.79.87 11 2.283 12.21.87 14.08 0 15.95 0 19.36 0 22 2.609 22 5.978c0 4.13-3.74 7.5-9.46 12.5L11 20z"></path>
+                    </svg>
+                    <svg width="22" height="20" fill="none" class="lives-box__heart">
+                        <path fill="#FF1A00" d="M11 20l-1.54-1.522c-5.72-5-9.46-8.37-9.46-12.5C0 2.608 2.64 0 6.05 0 7.92 0 9.79.87 11 2.283 12.21.87 14.08 0 15.95 0 19.36 0 22 2.609 22 5.978c0 4.13-3.74 7.5-9.46 12.5L11 20z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="buttons-area">
+            <button class="button-start">начать</button>
+            <button class="button-help">?</button>
+        </div>
+    </header>
+
+    <section class="game-area">
+        <div class="game-area__wrapper">
+            <div class="game-area__hole hole-1" >
+                <span id="hole-0"> </span>
+            </div>
+        </div>
+        <div class="game-area__wrapper">
+            <div class="game-area__hole hole-2">
+                <span id="hole-1"></span>
+            </div>
+        </div>
+        <div class="game-area__wrapper">
+            <div class="game-area__hole hole-3">
+                <span id="hole-2"></span>
+            </div>
+        </div>
+        <div class="game-area__wrapper">
+            <div class="game-area__hole hole-4">
+                <span id="hole-3"></span>
+            </div>
+        </div>
+        <div class="game-area__wrapper">
+            <div class="game-area__hole hole-5">
+                <span id="hole-4"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup endgame">
+        <div class="popup__header">игра завершена</div>
+        <div class="endgame__congrats">Поздравляем! Вы набрали:</div>
+        <div class="endgame__number"></div>
+        <div class="endgame__score">очков!</div>
+        <button class="popup__button">ок</button>
+    </div>
+
+    <div class="popup guide">
+        <div class="popup__header">правила игры</div>
+        <div class="popup__rules">
+            <ol class="popup__list">
+                <li class="popup__list-item"> В одной из 5-ти норок в случайном порядке периодически появляется мышь 🐭
+                    и другие emoji 🐭🐼🐻🦊🐱🐱...
+                </li>
+                <li class="popup__list-item"> Нужно поймать мышь. При клике по мыши игроку добавляется +10 очков.</li>
+                <li class="popup__list-item">После каждой пятой пойманной мыши скорость её случайного появления
+                    увеличивается.
+                </li>
+                <li class="popup__list-item">Если клик был выполнен по другому emoji, то у игрока отнимается жизнь.
+                    Всего 3 жизни. Если жизни закончились, то игра останавливается.
+                </li>
+            </ol>
+        </div>
+        <button class="popup__button">ок</button>
+    </div>
+</div>
+
+<footer class="footer">
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
